@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>THC - Staking</title>
+	<title>THC - Lending</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
 	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
 	<script
@@ -20,24 +20,73 @@
 		align: center;
 		}
 		
+		<!-- Video background -->
 		
+	.fullscreen-bg {
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  overflow: hidden;
+		  z-index: -100;
+		}
+
+		.fullscreen-bg__video {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  z-index: -100;
+		}
+
+		@media (min-aspect-ratio: 16/9) {
+		 .fullscreen-bg__video {
+			width: 100%;
+			height: auto;
+		  }
+		}
+
+		@media (max-aspect-ratio: 16/9) {
+		 .fullscreen-bg__video {
+			width: auto;
+			height: 100%;
+		  }
+		}
+		
+		
+	</style>
+
+
 
 </head>
 
 <body>
 
-	</div>
+	<!-- Background Video -->
+<div class="fullscreen-bg">
+	<video loop muted autoplay poster="../img/videoposterle.png" class="fullscreen-bg__video">
+		<source src="../img/video/nature2.mp4" type="video/mp4">
+	</video>
+</div>
 	
 	<!-- Buttonleiste Navigation -->
 	<div style="height: 50px; width: 100%; background-color: #1B1C1D; opacity: 0.8; position: fixed; top: 0px; z-index: 1">
 		<div class="ui six item inverted menu" style="margin: auto; left: 25%; position: fixed; top: 0px; height: 50px; width: 50%; z-index: 2">
 			<a class="item" id="exchange" onclick="openLink('exchange')">Exchange</a>
-				</div>
+			<a class="item" id="ron" onclick="openLink('ron')">Rise of Nations</a>
+			<a class="item" id="coe" onclick="openLink('coe')">Conquest of Etherea</a>
+			<a class="item" id="m3divval" onclick="openLink('secret')">[Secret Project]</a>
+			<a class="item" id="wiki" onclick="openLink('wiki')">THC Wiki</a>
+			<a class="item" id="discord" onclick="openLink('discord')">THC Discord</a>
+		</div>
+	</div>
 
 	<!-- Header -->
 	<div style="margin-top: 70px;" class="ui container center aligned">		
 		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
-		<p>Destiny Token</p>
+		<p>The HODL Community</p>
 		<h2 style="margin-top: 0px;">Lending</h2>
 	</div>
 	
