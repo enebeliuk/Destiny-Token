@@ -1,7 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta chars<!DOCTYPE html>
+<html lang="en">
+<head>
 	<meta charset="UTF-8">
+	<title>DYT- Staking</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+	<script
+		src="https://code.jquery.com/jquery-3.1.1.min.js"
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+		crossorigin="anonymous">
+	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	
+	<style>
+		p {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		align: center;
+		}
+		
+		<!-- Video background -->
+		
+	.fullscreen-bg {
+		  position: fixed;
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+		  overflow: hidden;
+		  z-index: -100;
+		}
+
+		.fullscreen-bg__video {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  z-index: -100;
+		}
+
+		@media (min-aspect-ratio: 16/9) {
+		 .fullscreen-bg__video {
+			width: 100%;
+			height: auto;
+		  }
+		}
+
+		@media (max-aspect-ratio: 16/9) {
+		 .fullscreen-bg__video {
+			width: auto;
+			height: 100%;
+		  }
+		}
+		
+		
+	</style>
+
+
+
+</head>
+
+<body>
+
+	
+	
+	<!-- Buttonleiste Navigation -->
+	<div style="height: 50px; width: 100%; background-color: #1B1C1D; opacity: 0.8; position: fixed; top: 0px; z-index: 1">
+		<div class="ui six item inverted menu" style="margin: auto; left: 25%; position: fixed; top: 0px; height: 50px; width: 50%; z-index: 2">
+			<a class="item" id="exchange" onclick="openLink('exchange')">Exchange</a>
+			
+	</div>
+
+	<!-- Header -->
+	<div style="margin-top: 70px;" class="ui container center aligned">		
+		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
+		<p>Destiny Token Platform</p>
+		<h2 style="margin-top: 0px;">Staking</h2>
+	</div>
+	
+
+	<!-- Announcement 
+	<div class="ui container center aligned">
+		<div style="background-color: #CC66FF; margin-top: 10px;" class="ui raised segment">
+			<h2>Announcement</h2>
+			<h3 id="deploy">OPEN FOR DEPOSIT</h3>
+			<p style="text-align: right; font-size: 10px">This announcement will cease at dd.mm.yyyy</p>
+		</div>
+	</div>
+	-->
+	
+	<!-- Personal Stats (Holdings), Staking stats -->
+	<div style="margin-top: 25px" class="ui container center aligned">
+		<div style="background-color: #e0e0e0;" class="ui raised segment">
+		
+			<div class="ui internally celled grid">
+				<div class="five column row">
+				
+					<div class="column">
+						<div class="ui grid">
+							<div class="row no-padding">
+								<div class="column" style="text-align: center;">
+								
+									<h3><b>My Token Balance</b></h3>
+									<span>
+										<b id="tokenbalance" style="font-size: 18px;">- DYT</b>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="column">
+						<div class="ui grid">
+							<div class="row no-padding">
+								<div class="column" style="text-align: center;">
+								
+									<h3><b>My Deposit</b></h3>
+									<span>
+										<b id="mydeposit" style="font-size: 18px;">- DYT</b>
+									</span>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="column">
+						<div class="ui grid">
+							<div class="row no-padding">
+								<div class="column" style="text-align: center;">
+								
+									<h3><b>Total Staking Balance</b></h3>
+									<span>
+										<b id="stakingbalance" style="font-size: 18px;">- DYT</b>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="column">
+						<div class="ui grid">
+							<div class="row no-padding">
+								<div class="column" style="text-align: center;">
+								
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="column">
+					<a href="https://rinkeby.etherscan.io/address/0x60e576f27f40bc461d26c17fa2b4e312f8e1219d" target="_blank"><button style="background-color:#66CC66" class="ui huge button">Smart Contract</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+			
+	
+
+	<div class="ui container center aligned">
+		<div class="ui raised segment" style="background-color: rgba(227, 227, 227, 0.2); margin-top: 25px;">
+
+			
+			
+			<!-- Profit Wallet + Info Wallet -->
+			
+			<div class="ui two column grid">
+			
+				<div class="column">
+					<div style="background-color: #e0e0e0;" class="ui segment">
+						<h3 style="text-align: center;">Profit Wallet</h3>
+						<br>
+						
+						<span>
+							<b style="font-size: 25px" id="profit">- DYT</b>
+						</span>
+						
+						<div class="ui divider"></div>
+						
+						<button id="reinvest" class="fluid big ui button" style="background-color:#66CC66; margin-bottom: 10px;">
+							Reinvest your DYT!
+						</button>
+						
+						<button style="background-color:#CC6666; margin-top: 5px" class="fluid big ui button" id="withdraw">
+							Withdraw DYT to your wallet
+						</button>
+					</div>
+				</div>
+				
+				<div class="column">
+					<div style="background-color: #e0e0e0;" class="ui segment">
+						<h3 style="text-align: center;">Info Profit Wallet</h3>
+						<p style="font-size: 16px; line-height: 25px;">
+							Once you invested into the staking contract, your profits will be displayed in the profit wallet.
+							You can:
+							<div class="ui bulleted list">
+								<div class="item">Withdraw your tokens to your wallet on the exchange for more dividends.</div>
+								<div class="item">Reinvest them to increase your staking deposit and start compounding.</div>
+							</div>
+							<b>Withdrawing</b> your profits is completely <b>free</b>.
+							When <b>reinvesting</b> your profits, these tokens will also incur the <b>withdraw fee when you decide to exit</b> the staking contract.
+
+						</p>
+					</div>
+				</div>
+
+			</div>
+			
+			<!-- Deposit Tokens + Info Deposit-->
+			
+			<div class="ui two column grid">
+				
+				<div class="column">
+					<div style="background-color: #e0e0e0;" class="ui segment">
+						<h3 style="text-align: center;">Deposit DYT into Staking</h3>
+						<br>
+						<div class="ui three column grid centered">
+							<div class="three wide column">
+								
+									<img class="ui fluid image" src="../img/DYT Logo final.png" alt="">
+								
+							</div>
+							<div style="margin-left: -25px; margin-right: -25px; margin-top: 20px;" class="ten wide column">
+								<form class="ui form">
+									<div class="field">
+										<input id="depositAmount" type="text" name="first-name" placeholder="Amount of DYT">
+									</div>
+								</form>
+							</div>
+							<div class="three wide column">
+								
+									<img class="ui fluid image" src="../img/THC Logo final.png" alt="">
+								
+							</div>
+						</div>
+						<br>
+						<button style="background-color:#66CC66" class="fluid big ui button" id="deposit">
+							Deposit your DYT!
+						</button>
+					</div>
+				</div>
+				
+				<div class="column">
+					<div style="background-color: #e0e0e0;" class="ui segment">
+						<h3 style="text-align: center;">Info Deposit Tokens</h3>
+						<p style="font-size: 16px; line-height: 25px;">
+							Here, you can deposit your DYT!
+							<br>
+							You will earn 1.337% daily / 40.11% monthly of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
+							<br>
+							There is no minimum deposit!
+						</p>						
+					</div>
+				</div>
+			
+			</div>
+			
+			
+			<!-- Withdraw All Profits -->
+			<div style="background-color: #e0e0e0;" class="ui segment">
+						<h3 style="text-align: center;">Withdraw all Capital</h3>
+						<p style="font-size: 16px;">
+						When withdrawing your capital you will exit the lending contract with your full active deposit.
+						<br>
+						When doing so, you will incur a 20% withdraw fee. Keep this in mind!
+						</p>
+						<div class="ui divider"></div>
+						<button style="background-color:#CC6666" class="fluid big ui button" id="withdrawcapital">
+						Withdraw all your Capital
+						</button>
+			</div>
+			
+			<!-- Footer -->
+			<p>
+			<br>
+			<br>
+			Welcome to the world of passive income.</p>
+			
+			
+		</div>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+	<script type="text/javascript" src="../js/web3.min.js"></script>
+	<script type="text/javascript" src="../js/lending_ui.js"></script>
+	<script type="text/javascript" src="../js/lending.js"></script>
+	
+</body>
+
+
+
+</html>et="UTF-8">
 	<title>DYT- Stakin<!DOCTYPE html>
 <html lang="en">
 <head>
