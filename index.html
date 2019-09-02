@@ -20,43 +20,7 @@
 		align: center;
 		}
 		
-		<!-- Video background -->
 		
-	.fullscreen-bg {
-		  position: fixed;
-		  top: 0;
-		  right: 0;
-		  bottom: 0;
-		  left: 0;
-		  overflow: hidden;
-		  z-index: -100;
-		}
-
-		.fullscreen-bg__video {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  z-index: -100;
-		}
-
-		@media (min-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: 100%;
-			height: auto;
-		  }
-		}
-
-		@media (max-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: auto;
-			height: 100%;
-		  }
-		}
-		
-		
-	</style>
 
 
 
@@ -64,12 +28,7 @@
 
 <body>
 
-	<!-- Background Video -->
-<div class="fullscreen-bg">
-	<video loop muted autoplay poster="../img/videoposterle.png" class="fullscreen-bg__video">
-		<source src="../img/video/nature2.mp4" type="video/mp4">
-	</video>
-</div>
+	</div>
 	
 	<!-- Buttonleiste Navigation -->
 	<div style="height: 50px; width: 100%; background-color: #1B1C1D; opacity: 0.8; position: fixed; top: 0px; z-index: 1">
@@ -80,8 +39,8 @@
 	<!-- Header -->
 	<div style="margin-top: 70px;" class="ui container center aligned">		
 		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
-		<p>Destiny Token</p>
-		<h2 style="margin-top: 0px;">Staking</h2>
+		<b><h1><p>Destiny Token</p></b></h1>
+		<h2 style="margin-top: 0px;">Staking</h4>
 	</div>
 	
 
@@ -109,7 +68,7 @@
 								
 									<h3><b>My Token Balance</b></h3>
 									<span>
-										<b id="tokenbalance" style="font-size: 16px;">- THC</b>
+										<b id="tokenbalance" style="font-size: 16px;">- DYT</b>
 									</span>
 								</div>
 							</div>
@@ -123,7 +82,7 @@
 								
 									<h3><b>My Deposit</b></h3>
 									<span>
-										<b id="mydeposit" style="font-size: 16px;">- THC</b>
+										<b id="mydeposit" style="font-size: 16px;">- DYT</b>
 									</span>
 									
 								</div>
@@ -136,24 +95,16 @@
 							<div class="row no-padding">
 								<div class="column" style="text-align: center;">
 								
-									<h3><b>Total Lending Balance</b></h3>
+									<h3><b>Total Staking Balance</b></h3>
 									<span>
-										<b id="lendingbalance" style="font-size: 16px;">- THC</b>
+										<b id="lendingbalance" style="font-size: 16px;">- DYT</b>
 									</span>
 								</div>
 							</div>
 						</div>
 					</div>
 					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>Total Surplus</b></h3>
-									<span>
-										<b id="totalsurplus" style="font-size: 16px;">- %</b>
-									</span>
+					</span>
 								</div>
 							</div>
 						</div>
@@ -186,17 +137,17 @@
 						<br>
 						
 						<span>
-							<b style="font-size: 25px" id="profit">- THC</b>
+							<b style="font-size: 25px" id="profit">- DYT</b>
 						</span>
 						
 						<div class="ui divider"></div>
 						
 						<button id="reinvest" class="fluid big ui button" style="background-color:#66CC66; margin-bottom: 10px;">
-							Reinvest your THC!
+							Reinvest your DYT!
 						</button>
 						
 						<button style="background-color:#CC6666; margin-top: 5px" class="fluid big ui button" id="withdraw">
-							Withdraw THC to your wallet
+							Withdraw DYT to your wallet
 						</button>
 					</div>
 				</div>
@@ -205,7 +156,7 @@
 					<div style="background-color: #e0e0e0;" class="ui segment">
 						<h3 style="text-align: center;">Info Profit Wallet</h3>
 						<p style="font-size: 16px; line-height: 25px;">
-							Once you invested into the lending contract, your profits will be displayed in the profit wallet.
+							Once you invested into the staking contract, your profits will be displayed in the profit wallet.
 							You can:
 							<div class="ui bulleted list">
 								<div class="item">Withdraw your tokens to your wallet on the exchange for more dividends.</div>
@@ -226,7 +177,7 @@
 				
 				<div class="column">
 					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Deposit THC into Lending</h3>
+						<h3 style="text-align: center;">Deposit DYT into Staking</h3>
 						<br>
 						<div class="ui three column grid centered">
 							<div class="three wide column">
@@ -249,7 +200,7 @@
 						</div>
 						<br>
 						<button style="background-color:#66CC66" class="fluid big ui button" id="deposit">
-							Deposit your THC!
+							Deposit your DYT!
 						</button>
 					</div>
 				</div>
@@ -260,7 +211,7 @@
 						<p style="font-size: 16px; line-height: 25px;">
 							Here, you can deposit your THC!
 							<br>
-							You will earn 1.337% daily / 40.11% monthly of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
+							You will earn 1% daily of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
 							<br>
 							There is no minimum deposit!
 						</p>						
@@ -276,7 +227,7 @@
 						<p style="font-size: 16px;">
 						When withdrawing your capital you will exit the lending contract with your full active deposit.
 						<br>
-						When doing so, you will incur a 25% withdraw fee. Keep this in mind!
+						When doing so, you will incur a 20% withdraw fee. Keep this in mind!
 						</p>
 						<div class="ui divider"></div>
 						<button style="background-color:#CC6666" class="fluid big ui button" id="withdrawcapital">
@@ -288,7 +239,7 @@
 			<p>
 			<br>
 			<br>
-			HODL responsibly. Dont drink and crypto.</p>
+			Welcome to the world of passive income.</p>
 			
 			
 		</div>
