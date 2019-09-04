@@ -1,888 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta chars<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>DYT- Staking</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-	<script
-		src="https://code.jquery.com/jquery-3.1.1.min.js"
-		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-		crossorigin="anonymous">
-	</script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
-	
-	<style>
-		p {
-		margin-top: 5px;
-		margin-bottom: 5px;
-		align: center;
-		}
-		
-		<!-- Video background -->
-		
-	.fullscreen-bg {
-		  position: fixed;
-		  top: 0;
-		  right: 0;
-		  bottom: 0;
-		  left: 0;
-		  overflow: hidden;
-		  z-index: -100;
-		}
-
-		.fullscreen-bg__video {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  z-index: -100;
-		}
-
-		@media (min-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: 100%;
-			height: auto;
-		  }
-		}
-
-		@media (max-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: auto;
-			height: 100%;
-		  }
-		}
-		
-		
-	</style>
-
-
-
-</head>
-
-<body>
-
-	
-	
-		<!-- Header -->
-	<div style="margin-top: 70px;" class="ui container center aligned">		
-		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
-		<p>Destiny Token Platform</p>
-		<h2 style="margin-top: 0px;">Staking</h2>
-	</div>
-	
-
-	<!-- Announcement 
-	<div class="ui container center aligned">
-		<div style="background-color: #CC66FF; margin-top: 10px;" class="ui raised segment">
-			<h2>Announcement</h2>
-			<h3 id="deploy">OPEN FOR DEPOSIT</h3>
-			<p style="text-align: right; font-size: 10px">This announcement will cease at dd.mm.yyyy</p>
-		</div>
-	</div>
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.6  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Rose ">
+	<META NAME="CREATED" CONTENT="20190903;16352741">
+	<META NAME="CHANGEDBY" CONTENT="Rose ">
+	<META NAME="CHANGED" CONTENT="20190904;13240345">
+	<STYLE TYPE="text/css">
+	<!--
+		TD P { text-align: center }
+		H3.cjk { font-family: "SimSun" }
+		H3.ctl { font-family: "Lucida Sans" }
 	-->
-	
-	<!-- Personal Stats (Holdings), Staking stats -->
-	<div style="margin-top: 25px" class="ui container center aligned">
-		<div style="background-color: #e0e0e0;" class="ui raised segment">
-		
-			<div class="ui internally celled grid">
-				<div class="five column row">
-				
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Token Balance</b></h3>
-									<span>
-										<b id="tokenbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Deposit</b></h3>
-									<span>
-										<b id="mydeposit" style="font-size: 18px;">- DYT</b>
-									</span>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>Total Staking Balance</b></h3>
-									<span>
-										<b id="stakingbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-					<a href="https://rinkeby.etherscan.io/address/0x60e576f27f40bc461d26c17fa2b4e312f8e1219d" target="_blank"><button style="background-color:#66CC66" class="ui huge button">Smart Contract</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-			
-	
-
-	<div class="ui container center aligned">
-		<div class="ui raised segment" style="background-color: rgba(227, 227, 227, 0.2); margin-top: 25px;">
-
-			
-			
-			<!-- Profit Wallet + Info Wallet -->
-			
-			<div class="ui two column grid">
-			
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Profit Wallet</h3>
-						<br>
-						
-						<span>
-							<b style="font-size: 25px" id="profit">- DYT</b>
-						</span>
-						
-						<div class="ui divider"></div>
-						
-						<button id="reinvest" class="fluid big ui button" style="background-color:#66CCFF; margin-bottom: 10px;">
-							Reinvest your DYT!
-						</button>
-						
-						<button style="-color:#66CCFF; margin-top: 5px" class="fluid big ui button" id="withdraw">
-							Withdraw DYT to your wallet
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Profit Wallet</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Once you invested into the staking contract, your profits will be displayed in the profit wallet.
-							You can:
-							<div class="ui bulleted list">
-								<div class="item">Withdraw your tokens to your wallet on the exchange for more dividends.</div>
-								<div class="item">Reinvest them to increase your staking deposit and start compounding.</div>
-							</div>
-							<b>Withdrawing</b> your profits is completely <b>free</b>.
-							When <b>reinvesting</b> your profits, these tokens will also incur the <b>withdraw fee when you decide to exit</b> the staking contract.
-
-						</p>
-					</div>
-				</div>
-
-			</div>
-			
-			<!-- Deposit Tokens + Info Deposit-->
-			
-			<div class="ui two column grid">
-				
-				<div class="column">
-					<div style="foreground-color: #66CCFF;" class="ui segment">
-						<h3 style="text-align: center;">Deposit DYT into Staking</h3>
-						<br>
-						<div class="ui three column grid centered">
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/DYT Logo final.png" alt="">
-								
-							</div>
-							<div style="margin-left: -25px; margin-right: -25px; margin-top: 20px;" class="ten wide column">
-								<form class="ui form">
-									<div class="field">
-										<input id="depositAmount" type="text" name="first-name" placeholder="Amount of DYT">
-									</div>
-								</form>
-							</div>
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/THC Logo final.png" alt="">
-								
-							</div>
-						</div>
-						<br>
-						<button style="background-color:#66CC66" class="fluid big ui button" id="deposit">
-							Deposit your DYT!
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Deposit Tokens</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Here, you can deposit your DYT!
-							<br>
-							You will earn 1.337% daily / 40.11% monthly of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
-							<br>
-							There is no minimum deposit!
-						</p>						
-					</div>
-				</div>
-			
-			</div>
-			
-			
-			<!-- Withdraw All Profits -->
-			<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Withdraw all Capital</h3>
-						<p style="font-size: 16px;">
-						When withdrawing your capital you will exit the lending contract with your full active deposit.
-						<br>
-						When doing so, you will incur a 20% withdraw fee. Keep this in mind!
-						</p>
-						<div class="ui divider"></div>
-						<button style="background-color:#CC6666" class="fluid big ui button" id="withdrawcapital">
-						Withdraw all your Capital
-						</button>
-			</div>
-			
-			<!-- Footer -->
-			<p>
-			<br>
-			<br>
-			Welcome to the world of passive income.</p>
-			
-			
-		</div>
-	</div>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-	<script type="text/javascript" src="../js/web3.min.js"></script>
-	<script type="text/javascript" src="../js/lending_ui.js"></script>
-	<script type="text/javascript" src="../js/lending.js"></script>
-	
-</body>
-
-
-
-</html>et="UTF-8">
-	<title>DYT- Stakin<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>DYT- Staking</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
-	<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
-	<script
-		src="https://code.jquery.com/jquery-3.1.1.min.js"
-		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-		crossorigin="anonymous">
-	</script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
-	
-	<style>
-		p {
-		margin-top: 5px;
-		margin-bottom: 5px;
-		align: center;
-		}
-		
-		<!-- Video background -->
-		
-	.fullscreen-bg {
-		  position: fixed;
-		  top: 0;
-		  right: 0;
-		  bottom: 0;
-		  left: 0;
-		  overflow: hidden;
-		  z-index: -100;
-		}
-
-		.fullscreen-bg__video {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  z-index: -100;
-		}
-
-		@media (min-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: 100%;
-			height: auto;
-		  }
-		}
-
-		@media (max-aspect-ratio: 16/9) {
-		 .fullscreen-bg__video {
-			width: auto;
-			height: 100%;
-		  }
-		}
-		
-		
-	</style>
-
-
-
-</head>
-
-<body>
-
-	
-	
-	<!-- Buttonleiste Navigation -->
-	<div style="height: 50px; width: 100%; background-color: #1B1C1D; opacity: 0.8; position: fixed; top: 0px; z-index: 1">
-		<div class="ui six item inverted menu" style="margin: auto; left: 25%; position: fixed; top: 0px; height: 50px; width: 50%; z-index: 2">
-			<a class="item" id="exchange" onclick="openLink('exchange')">Exchange</a>
-			
-	</div>
-
-	<!-- Header -->
-	<div style="margin-top: 70px;" class="ui container center aligned">		
-		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
-		<p>Destiny Token Platform</p>
-		<h2 style="margin-top: 0px;">Staking</h2>
-	</div>
-	
-
-	<!-- Announcement 
-	<div class="ui container center aligned">
-		<div style="background-color: #e0e0e0; margin-top: 10px;" class="ui raised segment">
-			<h2>Announcement</h2>
-			<h3 id="deploy">OPEN FOR DEPOSIT</h3>
-			<p style="text-align: right; font-size: 10px">This announcement will cease at dd.mm.yyyy</p>
-		</div>
-	</div>
-	-->
-	
-	<!-- Personal Stats (Holdings), Staking stats -->
-	<div style="margin-top: 25px" class="ui container center aligned">
-		<div style="background-color: #e0e0e0;" class="ui raised segment">
-		
-			<div class="ui internally celled grid">
-				<div class="five column row">
-				
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Token Balance</b></h3>
-									<span>
-										<b id="tokenbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Deposit</b></h3>
-									<span>
-										<b id="mydeposit" style="font-size: 18px;">- DYT</b>
-									</span>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>Total Staking Balance</b></h3>
-									<span>
-										<b id="stakingbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-					<a href="https://rinkeby.etherscan.io/address/0x60e576f27f40bc461d26c17fa2b4e312f8e1219d" target="_blank"><button style="background-color:#66CC66" class="ui huge button">Smart Contract</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-			
-	
-
-	<div class="ui container center aligned">
-		<div class="ui raised segment" style="background-color: rgba(227, 227, 227, 0.2); margin-top: 25px;">
-
-			
-			
-			<!-- Profit Wallet + Info Wallet -->
-			
-			<div class="ui two column grid">
-			
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Profit Wallet</h3>
-						<br>
-						
-						<span>
-							<b style="font-size: 25px" id="profit">- DYT</b>
-						</span>
-						
-						<div class="ui divider"></div>
-						
-						<button id="reinvest" class="fluid big ui button" style="background-color:#66CC66; margin-bottom: 10px;">
-							Reinvest your DYT!
-						</button>
-						
-						<button style="background-color:#CC6666; margin-top: 5px" class="fluid big ui button" id="withdraw">
-							Withdraw DYT to your wallet
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Profit Wallet</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Once you invested into the staking contract, your profits will be displayed in the profit wallet.
-							You can:
-							<div class="ui bulleted list">
-								<div class="item">Withdraw your tokens to your wallet on the exchange for more dividends.</div>
-								<div class="item">Reinvest them to increase your staking deposit and start compounding.</div>
-							</div>
-							<b>Withdrawing</b> your profits is completely <b>free</b>.
-							When <b>reinvesting</b> your profits, these tokens will also incur the <b>withdraw fee when you decide to exit</b> the staking contract.
-
-						</p>
-					</div>
-				</div>
-
-			</div>
-			
-			<!-- Deposit Tokens + Info Deposit-->
-			
-			<div class="ui two column grid">
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Deposit DYT into Staking</h3>
-						<br>
-						<div class="ui three column grid centered">
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/DYT Logo final.png" alt="">
-								
-							</div>
-							<div style="margin-left: -25px; margin-right: -25px; margin-top: 20px;" class="ten wide column">
-								<form class="ui form">
-									<div class="field">
-										<input id="depositAmount" type="text" name="first-name" placeholder="Amount of DYT">
-									</div>
-								</form>
-							</div>
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/THC Logo final.png" alt="">
-								
-							</div>
-						</div>
-						<br>
-						<button style="background-color:#66CC66" class="fluid big ui button" id="deposit">
-							Deposit your DYT!
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Deposit Tokens</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Here, you can deposit your DYT!
-							<br>
-							You will earn 1.337% daily / 40.11% monthly of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
-							<br>
-							There is no minimum deposit!
-						</p>						
-					</div>
-				</div>
-			
-			</div>
-			
-			
-			<!-- Withdraw All Profits -->
-			<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Withdraw all Capital</h3>
-						<p style="font-size: 16px;">
-						When withdrawing your capital you will exit the lending contract with your full active deposit.
-						<br>
-						When doing so, you will incur a 20% withdraw fee. Keep this in mind!
-						</p>
-						<div class="ui divider"></div>
-						<button style="background-color:#CC6666" class="fluid big ui button" id="withdrawcapital">
-						Withdraw all your Capital
-						</button>
-			</div>
-			
-			<!-- Footer -->
-			<p>
-			<br>
-			<br>
-			Welcome to the world of passive income.</p>
-			
-			
-		</div>
-	</div>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-	<script type="text/javascript" src="../js/web3.min.js"></script>
-	<script type="text/javascript" src="../js/lending_ui.js"></script>
-	<script type="text/javascript" src="../js/lending.js"></script>
-	
-</body>
-
-
-
-</html>g</title>
-	<link rel="stylesheet" href="https://buildabizonline.com/share/?img=81567449805.jpg">
-	
-	<script
-		src="https://code.jquery.com/jquery-3.1.1.min.js"
-		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-		crossorigin="anonymous">
-	</script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-	<script type="text/javascript" src="../js/main.js"></script>
-	
-	<style>
-		p {
-		margin-top: 5px;
-		margin-bottom: 5px;
-		align: center;
-		}
-		
-		<!-- Video background -->
-		
-	.fullscreen-bg {
-		  position: fixed;
-		  top: 0;
-		  right: 0;
-		  bottom: 0;
-		  left: 0;
-		  overflow: hidden;
-		  z-index: -100;
-		}
-
-		.fullscreen-https://buildabizonline.com/share/?img=01567449099.jpg {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 100%;
-		  z-index: -100;
-		}
-
-		@media (min-aspect-ratio: 16/9) {
-		 .fullscreen-https://buildabizonline.com/share/?img=01567449099.jpg {
-			width: 100%;
-			height: auto;
-		  }
-		}
-
-		@media (max-aspect-ratio: 16/9) {
-		 .fullscreen-https://buildabizonline.com/share/?img=01567449099.jpg {
-			width: auto;
-			height: 100%;
-		  }
-		}
-		
-		
-	</style>
-
-
-
-</head>
-
-<body>
-
-	
-	
-	<!-- Buttonleiste Navigation -->
-	<div style="height: 50px; width: 100%; background-color: #1B1C1D; opacity: 0.8; position: fixed; top: 0px; z-index: 1">
-		<div class="ui six item inverted menu" style="margin: auto; left: 25%; position: fixed; top: 0px; height: 50px; width: 50%; z-index: 2">
-			<a class="item" id="exchange" onclick="openLink('exchange')">Exchange</a>
-			
-	</div>
-
-	<!-- Header -->
-	<div style="margin-top: 70px;" class="ui container center aligned">		
-		<img src="../img/LOGO.png" alt="Logo" style="width:128px;height:128px" >
-		<p>Destiny Token Platform</p>
-		<h2 style="margin-top: 0px;">Staking</h2>
-	</div>
-	
-
-	<!-- Announcement 
-	<div class="ui container center aligned">
-		<div style="background-color: #e0e0e0; margin-top: 10px;" class="ui raised segment">
-			<h2>Announcement</h2>
-			<h3 id="deploy">OPEN FOR DEPOSIT</h3>
-			<p style="text-align: right; font-size: 10px">This announcement will cease at dd.mm.yyyy</p>
-		</div>
-	</div>
-	-->
-	
-	<!-- Personal Stats (Holdings), Staking stats -->
-	<div style="margin-top: 25px" class="ui container center aligned">
-		<div style="background-color: #e0e0e0;" class="ui raised segment">
-		
-			<div class="ui internally celled grid">
-				<div class="five column row">
-				
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Token Balance</b></h3>
-									<span>
-										<b id="tokenbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>My Deposit</b></h3>
-									<span>
-										<b id="mydeposit" style="font-size: 18px;">- DYT</b>
-									</span>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									<h3><b>Total Staking Balance</b></h3>
-									<span>
-										<b id="stakingbalance" style="font-size: 18px;">- DYT</b>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-						<div class="ui grid">
-							<div class="row no-padding">
-								<div class="column" style="text-align: center;">
-								
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column">
-					<a href="https://rinkeby.etherscan.io/address/0x60e576f27f40bc461d26c17fa2b4e312f8e1219d" target="_blank"><button style="background-color:#66CC66" class="ui huge button">Smart Contract</button></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-			
-	
-
-	<div class="ui container center aligned">
-		<div class="ui raised segment" style="background-color: rgba(227, 227, 227, 0.2); margin-top: 25px;">
-
-			
-			
-			<!-- Profit Wallet + Info Wallet -->
-			
-			<div class="ui two column grid">
-			
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Profit Wallet</h3>
-						<br>
-						
-						<span>
-							<b style="font-size: 25px" id="profit">- DYT</b>
-						</span>
-						
-						<div class="ui divider"></div>
-						
-						<button id="reinvest" class="fluid big ui button" style="background-color:#66CC66; margin-bottom: 10px;">
-							Reinvest your DYT!
-						</button>
-						
-						<button style="background-color:#CC6666; margin-top: 5px" class="fluid big ui button" id="withdraw">
-							Withdraw DYT to your wallet
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Profit Wallet</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Once you invested into the lending contract, your profits will be displayed in the profit wallet.
-							You can:
-							<div class="ui bulleted list">
-								<div class="item">Withdraw your tokens to your wallet on the exchange for more dividends.</div>
-								<div class="item">Reinvest them to increase your lending deposit and start compounding.</div>
-							</div>
-							<b>Withdrawing</b> your profits is completely <b>free</b>.
-							When <b>reinvesting</b> your profits, these tokens will also incur the <b>withdraw fee when you decide to exit</b> the lending contract.
-
-						</p>
-					</div>
-				</div>
-
-			</div>
-			
-			<!-- Deposit Tokens + Info Deposit-->
-			
-			<div class="ui two column grid">
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Deposit DYT into Lending</h3>
-						<br>
-						<div class="ui three column grid centered">
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/DYT Logo final.png" alt="">
-								
-							</div>
-							<div style="margin-left: -25px; margin-right: -25px; margin-top: 20px;" class="ten wide column">
-								<form class="ui form">
-									<div class="field">
-										<input id="depositAmount" type="text" name="first-name" placeholder="Amount of DYT">
-									</div>
-								</form>
-							</div>
-							<div class="three wide column">
-								
-									<img class="ui fluid image" src="../img/THC Logo final.png" alt="">
-								
-							</div>
-						</div>
-						<br>
-						<button style="background-color:#66CC66" class="fluid big ui button" id="deposit">
-							Deposit your DYT!
-						</button>
-					</div>
-				</div>
-				
-				<div class="column">
-					<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Info Deposit Tokens</h3>
-						<p style="font-size: 16px; line-height: 25px;">
-							Here, you can deposit your DYT!
-							<br>
-							You will earn 1.337% daily / 40.11% monthly of your active deposit in profit as long as you don’t withdraw your capital (exit the lending contract)!
-							<br>
-							There is no minimum deposit!
-						</p>						
-					</div>
-				</div>
-			
-			</div>
-			
-			
-			<!-- Withdraw All Profits -->
-			<div style="background-color: #e0e0e0;" class="ui segment">
-						<h3 style="text-align: center;">Withdraw all Capital</h3>
-						<p style="font-size: 16px;">
-						When withdrawing your capital you will exit the lending contract with your full active deposit.
-						<br>
-						When doing so, you will incur a 20% withdraw fee. Keep this in mind!
-						</p>
-						<div class="ui divider"></div>
-						<button style="background-color:#CC6666" class="fluid big ui button" id="withdrawcapital">
-						Withdraw all your Capital
-						</button>
-			</div>
-			
-			<!-- Footer -->
-			<p>
-			<br>
-			<br>
-			Welcome to the world of passive income.</p>
-			
-			
-		</div>
-	</div>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
-	<script type="text/javascript" src="../js/web3.min.js"></script>
-	<script type="text/javascript" src="../js/lending_ui.js"></script>
-	<script type="text/javascript" src="../js/lending.js"></script>
-	
-</body>
-
-
-
-</html>
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" BGCOLOR="#cfe7f5" DIR="LTR">
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=3 FRAME=HSIDES RULES=ROWS STYLE="page-break-before: always">
+	<COLGROUP>
+		<COL WIDTH=109*>
+		<COL WIDTH=19*>
+	</COLGROUP>
+	<COLGROUP>
+		<COL WIDTH=27*>
+		<COL WIDTH=101*>
+	</COLGROUP>
+	<TR VALIGN=TOP>
+		<TH COLSPAN=3 WIDTH=61% HEIGHT=57>
+			<P STYLE="margin-top: 1.04cm"><FONT FACE="Trebuchet MS, sans-serif"><FONT SIZE=5>Destiny
+			Token Staking Platform</FONT></FONT></P>
+		</TH>
+		<TH WIDTH=39%>
+			<P STYLE="margin-top: 0.4cm"><IMG SRC="../Pictures/destinylogo.jpg" NAME="graphics1" ALIGN=LEFT WIDTH=124 HEIGHT=74 BORDER=0><BR CLEAR=LEFT><BR>
+			</P>
+		</TH>
+	</TR>
+	<TR VALIGN=TOP>
+		<TH COLSPAN=2 WIDTH=50% HEIGHT=61>
+			<P STYLE="margin-top: 0.28cm"><FONT FACE="Trebuchet MS, sans-serif"><FONT SIZE=4>DYT
+			Total Staked Balance</FONT></FONT></P>
+		</TH>
+		<TH COLSPAN=2 WIDTH=50%>
+			<P STYLE="margin-top: 0.28cm"><FONT FACE="Trebuchet MS, sans-serif"><FONT SIZE=4>DYT
+			Total Exchange Balance</FONT></FONT></P>
+		</TH>
+	</TR>
+	<TR>
+		<TH COLSPAN=4 WIDTH=100% HEIGHT=30 VALIGN=TOP>
+			<P ALIGN=LEFT STYLE="background: transparent; font-weight: normal">
+			<FONT FACE="Verdana, sans-serif"><FONT SIZE=2>Here you can deposit
+			your tokens to stake, reinvest and hodl them. This is an
+			investment platform that you can make some good, passive income
+			from for years to come, if you use it in the right way. Destiny
+			token is tethered to Ethereum. You can earn !% everyday from your
+			staked tokens for as long as you remain in the contract.</FONT></FONT></P>
+		</TH>
+	</TR>
+	<TR>
+		<TD WIDTH=42% HEIGHT=55 BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT FACE="Verdana, sans-serif"><FONT SIZE=4><B>MY
+			STAKED DYT</B></FONT></FONT></P>
+		</TD>
+		<TD COLSPAN=2 WIDTH=18%>
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+		<TD WIDTH=39% BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT FACE="Verdana, sans-serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>MY
+			DYT DIVIDENDS</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=42% HEIGHT=21 BGCOLOR="#0000ff">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+		<TD COLSPAN=2 WIDTH=18%>
+			<P ALIGN=CENTER STYLE="background: transparent"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=39% BGCOLOR="#0000ff">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=681 BORDER=1 CELLPADDING=4 CELLSPACING=3 RULES=COLS STYLE="page-break-inside: avoid">
+	<COL WIDTH=134>
+	<COL WIDTH=135>
+	<COL WIDTH=36>
+	<COL WIDTH=160>
+	<COL WIDTH=156>
+	<TR VALIGN=TOP>
+		<TD COLSPAN=2 WIDTH=280 BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT SIZE=4 STYLE="font-size: 15pt"><FONT FACE="Verdana, sans-serif"><B>STAKE
+			MY DYT </B></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=36>
+			<P ALIGN=CENTER STYLE="background: transparent"><BR>
+			</P>
+		</TD>
+		<TD COLSPAN=2 WIDTH=327 BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT SIZE=4 STYLE="font-size: 15pt"><FONT FACE="Verdana, sans-serif"><B>REINVEST
+			MY DYT</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=134 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER><FONT COLOR="#b2b2b2"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Amount
+			to Stake</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=135 VALIGN=TOP BGCOLOR="#0000ff">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+		<TD WIDTH=36 VALIGN=TOP>
+			<P ALIGN=CENTER STYLE="background: transparent"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=160 VALIGN=TOP BGCOLOR="#ffffff">
+			<P ALIGN=CENTER><FONT COLOR="#b2b2b2"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Amount
+			to Reinvest</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=156 VALIGN=TOP BGCOLOR="#0000ff">
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<TABLE WIDTH=100% BORDER=1 CELLPADDING=4 CELLSPACING=3>
+	<COL WIDTH=109*>
+	<COL WIDTH=18*>
+	<COL WIDTH=128*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=43% BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT SIZE=4 STYLE="font-size: 15pt"><FONT FACE="Verdana, sans-serif"><B>WITHDRAW
+			MY DYT DIVIDENDS</B></FONT></FONT></P>
+			<P ALIGN=CENTER STYLE="font-weight: normal"><FONT SIZE=2><FONT FACE="Verdana, sans-serif">(Goes
+			to Destiny Token Exchange)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=7%>
+			<P ALIGN=CENTER><BR>
+			</P>
+		</TD>
+		<TD WIDTH=50% BGCOLOR="#ccffff">
+			<P ALIGN=CENTER><FONT SIZE=4 STYLE="font-size: 15pt"><FONT FACE="Verdana, sans-serif"><B>SELL
+			ALL MY DYT</B></FONT></FONT></P>
+			<P ALIGN=CENTER STYLE="font-weight: normal"><FONT SIZE=2><FONT FACE="Verdana, sans-serif">(There
+			will be a 15% fee charged to leave the staking contract)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=43% BGCOLOR="#0000ff">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=7%>
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=50% BGCOLOR="#0000ff">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<P ALIGN=CENTER STYLE="font-style: normal; font-weight: normal"><FONT FACE="Lato, Helvetica Neue, Arial, Helvetica, sans-serif"><FONT SIZE=2 STYLE="font-size: 10pt">You
+are currently hodling enough tokens to run a Masternode!&nbsp;<BR>You
+receive&nbsp;<B>5%</B>&nbsp;of the total purchasing amount if someone
+buys tokens using your masternode!</FONT></FONT></P>
+<H3 CLASS="western" ALIGN=CENTER STYLE="margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm"><A NAME="masternodeLink"></A>
+<FONT FACE="Lato, Helvetica Neue, Arial, Helvetica, sans-serif"><B>Your
+active Masternode
+Link:&nbsp;<BR></B></FONT><FONT COLOR="#1e70bf"><SPAN STYLE="text-decoration: none"><FONT FACE="Lato, Helvetica Neue, Arial, Helvetica, sans-serif"><B><SPAN STYLE="background: transparent"><A HREF="https://the-hodl.community/exchange/?masternode=0x0b962755d87dc50f49deb45d5b0e7717db11dc71">https://destinytoken/stake/?masternode=0x0b962755d87dc50f49deb45d5b0e7717db11dc</A>71</SPAN></B></FONT></SPAN></FONT></H3>
+<P ALIGN=CENTER><BR><BR>
+</P>
+</BODY>
+</HTML>
