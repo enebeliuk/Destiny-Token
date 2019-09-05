@@ -1,0 +1,26 @@
+html>
+<head>
+<meta content="text/html; charset=ISO-8859-1"
+http-equiv="content-type">
+<title></title>
+</head>
+<body>
+<br>
+<div class="ui container">
+<div class="ui stackable grid">
+<div
+class="ui sixteen wide column interface dimmable wallet-mm logged-in"
+id="meta-mask-ui">
+<div class="ui stackable grid">
+<div class="ui five wide column center aligned" id="buy-panel">
+<div class="inner">
+<div class="spinning-logo"> <img src="https://i.imgur.com/RIpUkUm.png">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
